@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     FirebaseFirestore mFirestore;
     EditText description, quantity, period, time;
-    Button save;
+    Button save, picture;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
         quantity = findViewById(R.id.txtCantidad);
         period = findViewById(R.id.txtPeriodo);
         time = findViewById(R.id.spTiempo);
+
         save = findViewById(R.id.btnGuardar);
+        picture = findViewById(R.id.btnFotografia);
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +56,12 @@ public class MainActivity extends AppCompatActivity {
             data.put("time", mtime);
 
             mFirestore.collection("Medicines").document().set(data);
+
+            description.setText("");
+            quantity.setText("");
+            period.setText("");
+            time.setText("");
+            Toast.makeText(this, "Datos guardados", Toast.LENGTH_LONG).show();
         }
     }
 }
