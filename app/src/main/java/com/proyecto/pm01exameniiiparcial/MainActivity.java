@@ -2,10 +2,12 @@ package com.proyecto.pm01exameniiiparcial;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 
+import com.fxn.pix.Options;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -16,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     FirebaseFirestore mFirestore;
     EditText description, quantity, period, time;
     Button save, picture;
+    Options mOptions;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,12 +34,25 @@ public class MainActivity extends AppCompatActivity {
         save = findViewById(R.id.btnGuardar);
         picture = findViewById(R.id.btnFotografia);
 
+        mOptions = Options.init()
+                .setRequestCode(100)                                           //Request code for activity results
+                .setCount(1)                                                   //Number of images to restict selection count
+                .setFrontfacing(false)                                         //Front Facing camera on start
+//                .setPreSelectedUrls()                            //Pre selected Image Urls
+                .setExcludeVideos(true)
+                .setSpanCount(4)                                               //Span count for gallery min 1 & max 5
+                .setMode(Options.Mode.All)                                     //Option to select only pictures or videos or both
+                .setVideoDurationLimitinSeconds(0)                            //Duration for video recording
+                .setScreenOrientation(Options.SCREEN_ORIENTATION_PORTRAIT)     //Orientaion
+                .setPath("/pix/images");
+
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 saveData();
             }
         });
+
 
     }
 
