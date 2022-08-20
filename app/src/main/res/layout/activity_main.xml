@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,114 +8,125 @@
     android:background="@drawable/fondo"
     tools:context=".MainActivity">
 
-    <TextView
-        android:text="REGISTRAR MEDICAMENTO"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="22dp"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:paddingTop="30dp"/>
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/fotografia"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="20dp"
-        app:srcCompat="@drawable/medicamento" />
-
-    <Button
-        android:id="@+id/btnFotografia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="TOMAR FOTO"
-        android:background="@drawable/rounded_button"/>
-
-    <EditText
-        android:id="@+id/txtDescripcion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:gravity="start|top"
-        android:paddingTop="20dp"
-        android:hint="Escribe una descripcion"
-        android:inputType="textMultiLine" />
-
-    <EditText
-        android:id="@+id/txtCantidad"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Ingrese una cantidad"
-        android:inputType="number"
-        android:paddingTop="20dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="20dp">
-
-        <TextView
-            android:text="Tiempo:"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="50dp"
-            android:layout_gravity="center"
-            android:paddingLeft="5dp"
+            android:orientation="vertical">
+            <TextView
+                android:text="REGISTRAR MEDICAMENTO"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:paddingTop="30dp"/>
 
-            android:textAlignment="center"
-            android:textSize="18dp"/>
+            <ImageView
+                android:id="@+id/fotografia"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="20dp"
+                app:srcCompat="@drawable/medicamento" />
 
-        <Spinner
-            android:id="@+id/spTiempo"
-            android:layout_width="166dp"
-            android:layout_height="41dp"
-            android:ems="10"
-            android:gravity="start|top" />
+            <Button
+                android:id="@+id/btnFotografia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="TOMAR FOTO"
+                android:background="@drawable/rounded_button"/>
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/txtDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="start|top"
+                android:paddingTop="20dp"
+                android:hint="Escribe una descripcion"
+                android:inputType="textMultiLine" />
+
+            <EditText
+                android:id="@+id/txtCantidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Ingrese una cantidad"
+                android:inputType="text"
+                android:paddingTop="20dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:text="Tiempo:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="50dp"
+                    android:layout_gravity="center"
+                    android:paddingLeft="5dp"
+
+                    android:textAlignment="center"
+                    android:textSize="18dp"/>
+
+                <EditText
+                    android:id="@+id/spTiempo"
+                    android:layout_width="166dp"
+                    android:layout_height="41dp"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:gravity="start|top" />
+
+            </LinearLayout>
 
 
-    <EditText
-        android:id="@+id/txtPeriodo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Ingrese la periocidad"
-        android:inputType="number"
-        android:enabled="false"
-        android:paddingTop="20dp" />
+            <EditText
+                android:id="@+id/txtPeriodo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Ingrese la periocidad"
+                android:inputType="text"
+                android:paddingTop="20dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="25dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp">
 
-        <Button
-            android:id="@+id/btnGuardar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="50dp"
-            android:text="GUARDAR"
-            android:background="@drawable/rounded_button"/>
+                <Button
+                    android:id="@+id/btnGuardar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="50dp"
+                    android:text="GUARDAR"
+                    android:background="@drawable/rounded_button"/>
 
-        <Button
-            android:id="@+id/btnMedicamentos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="50dp"
-            android:text="MEDICAMENTOS"
-            android:background="@drawable/rounded_button"/>
+                <Button
+                    android:id="@+id/btnMedicamentos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="50dp"
+                    android:text="MEDICAMENTOS"
+                    android:background="@drawable/rounded_button"/>
 
-    </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
 
 
-</LinearLayout>
+    </ScrollView>
+</RelativeLayout>
